@@ -1,0 +1,523 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    display: flex;
+    justify-content: center;
+    height: 180vh;
+    flex-direction: column;
+    align-items: center;
+    background-repeat:no-repeat;
+    background-attachment: fixed;
+    background: linear-gradient(90deg, rgb(37, 50, 80) 0%, rgb(10, 59, 156) 100%);  
+}
+.music_player{
+    display: flex;
+}
+.message{
+    display: flex;
+}
+.backphoto_1 , .backphoto_2{
+   width: 400px;
+   position: relative;
+   cursor: pointer;
+   border-radius: 50%;
+   height: 400px;
+}
+.backphoto_1{
+    right:20%;
+    box-shadow: 0px 0px 60px rgba(0,0,0,0.8);
+    width: 430px;
+    transition: 1s;
+    animation: spin 0.8s infinite alternate ease-in-out;
+}
+@keyframes spin {
+    0%{
+        top: 10px;
+    }
+    100%{
+        top: -10px;
+    }
+    
+}
+.backphoto_2{
+    left:80%;
+    top: 50%;
+    transition: 1s;
+    box-shadow: 0px 0px 60px rgba(0,0,0,1);
+    animation: spin2 0.8s infinite alternate ease-in-out;
+}
+@keyframes spin2 {
+    0%{
+        top: 50px;
+    }
+    100%{
+        top: 70px;
+    }
+    
+}
+.main-msg{
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    top: 800px;
+    backdrop-filter: blur(10px);
+    width: 650px;
+    height: 450px;
+    left: 10%;
+    border-radius: 30px;
+    box-shadow: 0px 0px 50px rgba(0,0,0,0.5);
+    background-color: rgba(73, 32, 138, 0.322)
+}
+input{
+    outline: none;
+}
+label{
+    position: relative;
+    right: 3%;
+    color: white;
+    padding: 15px;
+    font-family: sans-serif;
+    font-size: 25px;
+    font-weight: 540;
+}
+.msg{
+    position: relative;
+    right: 24%;
+}
+.btn{
+    position: relative;
+    width: 30%;
+    height: 50px;
+    top: 10%;
+    right: 17%;
+    font-family: sans-serif;
+    font-weight: 540;
+    background-color: rgba(117, 110, 211, 0.548);
+    font-size: 20px;
+    color: white;
+    border-radius:5px;
+}
+.I-msg{
+    position: relative;
+    border: none;
+    border-radius: 10px;
+    width: 400px;
+    height: 100px;
+    padding-bottom: 70px;
+    right: 1%;
+    background-color: rgba(255, 255, 255, 0.486);
+ }
+.I-email, .I-name{
+
+    background:transparent;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-bottom: 1px solid black;
+    width: 300px;
+
+}
+.poster{
+    position:absolute;
+    background-color: rgba(240, 248, 255, 0.11);
+    z-index: 10;
+    height: 720px;
+    opacity: 1;
+    display: flex;
+    flex-direction: column;  
+    align-items: center; 
+    justify-content: center;
+    backdrop-filter: blur(10px);
+    box-shadow: 0px 0px 50px rgb(0,0,0,1);
+    transition: opacity 3s;
+    width: 1400px;
+    animation: animate 1s infinite alternate ease-in-out;
+}
+@keyframes animate {
+    0%{
+        top: 100px
+    }
+    100%{
+        top:-100px;
+    }
+}
+
+.poster-title{
+    font-family: sans-serif;
+    font-size: 50px;
+    font-weight: 700;
+}
+.dropbox-title{
+    display: flex;
+    justify-content: space-evenly;
+    text-align: center;
+    border-top-left-radius: 50px;
+    border-top-right-radius: 50px;
+    padding-top: 10px;
+    width: 350px;
+    transition: 0.5s;
+}
+.dropdown{
+    position: relative;
+    background: url(icons8-double-down-24.png);
+    background: transparent;  
+    transition: 2s;
+}
+.box-title{
+    color:black;
+    left: 25%;
+    top: 10px;
+    
+    font-family: sans-serif;
+    font-weight: 500;
+}
+.songs{
+    position: absolute;
+    top: 1%;
+    z-index: 4;
+}
+.songs_list{
+    border-radius: 50px;
+    height: 50px;
+    position: relative;
+    left: 310px;
+    transition: 0.5s;
+    width: 350px;
+    cursor: pointer;
+    box-shadow: 0px 0px 50px rgb(0,0,0,1);
+    display: flex;
+    flex-direction: column;
+    background-color:white;
+}
+.song1{ 
+    transition: 0.5s;
+    transition-delay: 0.5s;
+}
+.song2{ 
+    transition: 0.5s;
+    transition-delay: 1s;
+}
+.song3{    
+    transition: 0.5s;
+    transition-delay: 1.4s;
+}
+.song4{ 
+    transition: 0.5s;
+    transition-delay: 1.9s;
+}
+.song5{    
+    transition: 0.5s;
+    transition-delay: 2.3s;
+}
+.song6{ 
+    transition: 0.5s;
+    transition-delay: 2.7s;
+}
+li{
+    color: black;
+    left: 15%;
+    padding-top: 10px;
+    position: relative;
+    font-family: sans-serif;
+    z-index: 4;
+    opacity: 0;
+    transition: 0.5s;
+    top: -200px;
+    font-weight: 500;
+    transition-delay: 0.5s;
+}
+li::before{
+    position: absolute;
+    content: "";
+    height: 2px;
+    width: 0px;
+    top: 30px;
+    transition: 1s;
+    background-color: rgb(192, 32, 99);
+}
+li:hover:before{
+    padding-inline: 110px;
+}
+.player-main{
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    top: -100px;
+    left: 100px;
+    position: relative;
+    backdrop-filter: blur(4px);
+    height: 530px;
+    flex-direction: column;
+    width: 350px;
+    border-radius: 30px;
+    background-image: linear-gradient(30deg,  rgb(93, 93, 196) 60%, rgb(44, 44, 102) 60%,rgb(195, 0, 255) 90%);
+    box-shadow: 0px 0px 40px rgba(0,0,0,0.4),
+                0px -10px 35px rgba(0,0,0,0.1),
+                0px 20px 35px rgba(0,0,0,0.6);
+}
+.pic{
+    animation: rotate 4s linear infinite;
+}
+
+@keyframes rotate{
+    0%{
+       transform: rotate(0deg); 
+    }
+    100%{
+        transform: rotate(360deg);
+    }
+
+}
+.logo{
+    position: relative;
+    height: 16rem;
+    width: 16rem;
+    border-radius: 50%;
+    box-shadow: 0px 0px 30px rgba(0,0,0,1);
+    cursor: pointer;
+}
+
+.prograssBar{
+    height: 5px;
+    width: 14rem;
+    border-radius: 5px;
+    cursor: pointer;
+    outline: none;
+    -webkit-appearance: none;
+    overflow: hidden;
+    left: 60px;
+}
+
+.prograssBar::-webkit-slider-thumb{
+     width: 4px;
+     -webkit-appearance: none;
+     background: black;
+     height: 5px;
+     box-shadow: -257px 0 0 250px rgb(36, 32, 32), inset 0 0 0 40px #1597ff;
+     border-radius: 50%;
+     border: 4px solid rgb(78, 187, 214);
+     cursor: pointer;
+}
+span{
+    font-size: 25px;
+    color: white;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-weight: 900;
+}
+.currentTime{
+    position:absolute;
+    top:425px;
+    right: 250px;
+}
+.duration{
+    position: absolute;
+    left: 250px;
+    top:425px;
+}
+.btns{
+    display: flex;
+    position: absolute;
+    background-color: rgb(36, 39, 37);
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    height: 12.3%;
+    border-bottom-left-radius: 30px;
+    border-bottom-right-radius: 30px;
+    top: 465px;
+}
+.time-due{
+    display: flex;
+}
+.fwd{
+    height: 2rem;
+    width: 2rem;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0,0,0,1);
+    background-color: white;
+}
+.ply{
+    height: 3rem;
+    width: 3rem;
+    border-radius: 10px;
+    background-color: white;
+    box-shadow: 0px 0px 10px rgba(0,0,0,1);
+}
+.bwd{
+    height: 2rem;
+    width: 2rem;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0,0,0,1);
+    background-color: white;
+}
+.rev{
+    height: 1.5rem;
+    width: 1.5rem;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0,0,0,1);
+    background-color :white;
+    transition: background-color 0.4s;
+}
+
+.backward , .forward , .play ,.reverse{
+    background: transparent;
+    border: none;
+    position: relative;
+    cursor: pointer;
+    outline: none;
+}
+.backward{
+    right: 15%;
+}
+
+.forward{
+    left: 15%;
+}
+.reverse{
+    left: 25%;
+}
+
+@media screen and (max-width : 400px){
+     
+    body{
+        height: 150vh;
+        background: linear-gradient(90deg, hsla(221, 45%, 73%, 1) 0%, hsla(220, 78%, 29%, 1) 100%);  
+        background-repeat:no-repeat;
+        background-attachment: fixed;
+
+    }
+    .music_player{
+        flex-direction: column;
+    }
+    .message{
+        flex-direction: column;
+    }
+    .player-main{
+        top: 90px;
+        height: 480px;
+        width: 300px;
+        left: 0%;
+    }
+    .main-msg{
+        width: 350px;
+        height: 300px;
+        top: 79rem;
+        left: 6%;
+    }
+    .I-name{
+        width: 150px;
+    }
+    .I-email{
+        width: 150px;
+    }
+    .I-msg{
+        width: 230px;
+    }
+    .msg{
+        right: 70px;
+    }
+    label{
+       padding: 10px;
+    }
+    .btn{
+        top: 10px;
+        background-color: #8450c9;
+        right: 10px;
+        height: 35px;
+        width: 90px;
+        font-size: 15px;
+    }
+    .backphoto_1{
+        height: 250px;
+        width: 250px;
+        top: -50px;
+        left: 30px;
+        animation: spin 0.8s infinite alternate ease-in-out;
+    }
+    @keyframes spin {
+        0%{
+           top: -50px;
+        }
+        100%{
+           top: -30px;
+        }
+    
+    }
+
+    .backphoto_2{
+        height: 250px;
+        width: 250px;
+        top: 150px;
+        left: 0%;
+        animation: spin2 0.8s infinite alternate ease-in-out;
+    }
+    @keyframes spin2 {
+        0%{
+           top: 150px;
+        }
+        100%{
+           top: 130px;
+        }
+    
+    }
+    .dropdown{
+        right: 20px;
+    }
+    .songs_list{
+        width: 300px;
+        left: 1%;
+        top: 350px;
+    }
+    .logo{
+        height: 200px;
+        width: 200px;
+    }
+    .btns{
+       height: 14%;
+       top: 86%;
+    }
+    .dropbox-title{
+        width: 300px;
+    }
+    .currentTime{
+        top: 355px;
+        left: 35px;
+    }
+    .duration{
+        top: 355px;
+        left: 75%;
+    }
+    .songs{
+        left: 40px;
+    }
+    li{
+        left: 15px;
+    }
+    .poster{
+        width: 350px;
+        height: 550px;
+        left: 10;
+        animation: animate 1s infinite alternate ease-in-out;
+    }
+    @keyframes animate {
+        0%{
+            top: 100px
+        }
+        100%{
+            top:-50px;
+        }
+    }
+
+    .poster-title{
+        font-size:19px;
+        font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        font-weight: 900;
+    }
+}
+

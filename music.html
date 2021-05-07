@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Music-Player-Web-App</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    
+    
+        <div class="poster">
+            <span class="poster-title">
+                Folks ! Welcome to the Music-Player
+            </span>
+        </div>
+
+    <div class="songs">
+        <ul class="songs_list" >
+           <div id="dropbox-title" class="dropbox-title">
+            <span id="box-title" class="box-title">Choose-songs</span>
+            <img src="thumbnil/icons8-double-down-24.png" alt="" id="dropdown" class="dropdown">
+           </div>
+            <li data-index="0" onclick="getSongs(this)" id="song1" class="song1">Blinding Lights -The Weeknd</li>
+            <li data-index="1" onclick="getSongs(this)" id="song2" class="song2">Meant To Be -Ananya Birla</li>
+            <li data-index="2" onclick="getSongs(this)" id="song3" class="song3">Astronaut-In-The-Ocean -Masked Wolf</li>
+            <li data-index="3" onclick="getSongs(this)" id="song4" class="song4">Fake-a-Smile -Alan Waker</li>
+            <li data-index="4" onclick="getSongs(this)" id="song5" class="song5">Peaches -Justin Bieber</li>
+            <li data-index="5" onclick="getSongs(this)" id="song6" class="song6">Sorry -Alan Waker</li>
+        </ul>
+    </div>
+    <div class="music_player">
+
+        <div class="back-photo">
+            <img class="backphoto_1" src="background_photo/alexander-shatov-qt7S2QuAhJI-unsplash.jpg">
+        </div>
+        <div class="player-main">
+             
+            <div class="title">
+                <span class="title-name" id="title-name">Blinding Lights</span><br>
+                <span class="artist-name" id="artist-name">The Weeknd</span>
+            </div><br>
+             <div class="img">
+                 <img class="logo" src="covers/2670931.jpg" id="main-img">
+             </div><br>
+
+             <div class="bar">
+                <audio class="aud" id="aud" src="songs/The Weeknd - Blinding Lights 320kbps(mp3by.in).mp3" ></audio>
+                <input id="prograssBar" class="prograssBar" max="" min="0" type="range" value="0" onchange="ChangeprograsseBar()">
+                
+                <div class="mover" id="mover"></div>
+
+                <div class="time-due">
+                    <div class = "currentTime" id="currentTime"></div>
+                    <div class="duration" id="duration"></div>
+                </div>
+            
+             </div><br>
+
+             <div class="btns">
+                 <button  type="submit" class="backward" id="backward"><img class="bwd" id="bwd" src="thumbnil/backward-arrows-couple-pngrepo-com.png"></button>
+                 <button  type="submit" class="play" id="play"><img class="ply" id="ply" src="thumbnil/_Pngtree_vector_play_icon_4013730-removebg-preview.png"></button>
+                 <button  type="submit" class="forward" id="forward"><img class="fwd" id="fwd" src="thumbnil/fast-forward-pngrepo-com.png"></button>
+                 <button  type="submit" class="reverse" id="reverse"><img class="rev" id="rev" src="thumbnil/reverse-pngrepo-com.png"></button>
+             </div>
+
+        </div>
+    </div>
+
+    <div class="message">
+        <form action="/submit" method="POST" class="main-msg" id="main-msg">
+             
+            <label for="name" class="name" id="name">Name 
+                <input name="name" required class="I-name" id="I-name">
+            </label>
+
+            <label for="email" class="email" id="email">Email 
+                <input name="email" required class="I-email" id="I-email">
+            </label>
+
+            <label for="msg" class="msg" id="msg">Message </label>
+            <input name="msg" required class="I-msg" id="I-msg">
+
+            <button class="btn" id="btn" type="submit">Submit</button>
+        </form>
+        <div class="back-photo">
+            <img class="backphoto_2" src="background_photo/volodymyr-hryshchenko-V5vqWC9gyEU-unsplash.jpg">
+        </div>
+    </div>
+
+    <script src="feature.js"></script>
+</body>
+</html>
